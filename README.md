@@ -1,69 +1,42 @@
 # GovTech NodeJS Assessment
 
 
+One Paragraph of project description goes here
+
 ---
 
 ## Technical Choices
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-1. helmet<br />
+1. helmet
 Protect the APIs from some web vulnerabilities by setting HTTP headers appropriately
 
-2. Express and middlewares<br />
-Used for the purpose of routing and access to both request object and response object<br />
+2. x-powered-by
+Hide x-powered-by for allowing attacker to known it's running on Express
+
+3. Express and middlewares
+Used for the purpose of routing and access to both request object and response object
 http://expressjs.com/en/guide/using-middleware.html
 
-3. node-postgres<br />
+4. node-postgres
 Interface for PostgreSQL database with SQL injection prevention
 
-4. node-pg-format<br />
-For formatting query to allow formatting of query string for batch insert, especially insert with multiple variable per record. It comes with SQL injection prevention as well
+5. node-pg-format
+For formatting query to allow formatting of query string for batch insert
 
-5. email-validator<br />
+6. email-validator
 Library to validate email address
 
-6. body-parser<br />
+7. body-parser
 Parse incoming request bodies
 
-7. nodemon<br />
+8. nodemon
 Allow continuous running and redeployment of project upon code changes without stopping the node
 
-8. Chai, chai-http and mocha<br />
-For unit testing purpose which Chai have a long history from 2012 and still have processive support
+9. Chai, chai-http and mocha
+For unit testing purpose
 
-9. Mocha<br/>
-Together with Chai to run unit test cases and provide Async and Sync processing of the test cases. Also like Chai, from 2012 till now still have processive support
-
----
-
-## Assumption
-
-1. /api/register
-	* Only can register student who are not suspended
-	* Teacher email must be an existing teacher
-	* Valid email
-	* Cannot re-register again
-
-2. /api/retrieve
-	* Teacher email must be an existing teacher
-	* Valid email
-
-3. /api/commonstudents
-	* Minimum input of teacher's email must be two or more
-	* Common student(s) between two or more teachers don't include suspended student(s)
-	* Teacher email must be an existing teacher
-	* Valid email
-
-4. /api/suspend
-	* Student email must be an existing student
-	* Student has not been suspended yet
-	* Valid email
-
-5. /api/retrievefornotifications
-	* Valid email
-	* Email of both teacher and student(s) must be an existing student(s)
-	* Others conditions mentioned in GitHub
 ---
 
 ### Prerequisites
@@ -122,7 +95,7 @@ $ node app.js 8080
 ```
 $ npm test
 ```
-6. (Optional) The source code automatically connect to a public database. However, if require to deploy the database locally, proceed to import the SQL dump (PostgreSQL). After importing is completed, navigate to /db/index.js and change the following:
+6. (Optional) The source code automatically connect to a public database. However, if require to deploy the database locally, proceed to import the SQL dump (database-dump 01-2018). After importing is completed, navigate to /db/index.js and change the following:
 ```
 var config = {
   user: <USERNAME>,
@@ -136,10 +109,6 @@ var config = {
 
 API should be accessible at <base url>:8080/api/<function name> 
 
-7. Following teacher email are available:
-teacherken@example.com
-teacherjoe@example.com
-teachermary@example.com
 
 ## Running the tests
 
@@ -176,7 +145,6 @@ Running at port 8081
 ## Authors
 
 * **Lee Keng Wee, John** 
-
 
 
 

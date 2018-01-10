@@ -1,0 +1,27 @@
+{
+  "name": "govtechjs",
+  "version": "1.0.0",
+  "description": "nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha test/api/register.js test/api/retrieve.js test/api/commonstudent.js test/api/suspend.js test/api/retrievefornotifications.js test/reset.js --exit"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "email-validator": "*",
+    "express": "*",
+    "middlewares": "*",
+    "nodemon": "^1.14.8",
+    "pg": "*",
+    "pg-format": "*",
+    "helmet": "*"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "chai-http": "*",
+    "mocha": "*"
+  },
+  "author": "john lee",
+  "license": "ISC"
+}
